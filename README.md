@@ -7,6 +7,8 @@
 - [Anaconda3-5.0.1](https://repo.continuum.io/archive/Anaconda3-5.0.1-Windows-x86_64.exe) 
 - [graphviz-2.38.msi](https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi)
 - Pycharm
+- 程序运行需要的数据都在`PubData`目录下
+
 
 # 二. 如何在Pycharm中使用Anaconda的python
 - 创建新项目的时候, 在`Project Interpreter`中选择`Anaconda`安装目录下的python.exe
