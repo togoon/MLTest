@@ -7,21 +7,42 @@ from sklearn import preprocessing
 from sklearn import tree
 import graphviz
 
+## 此文档对应麦子学院(基础2)机器学习深度学习基础, 第三节决策树AllElectronics.py
+# rb是Python open命令的参数, 表示以二进制读模式打开文件, 源代码有问题, 不能使用rb, 因为next(reader)要求是txt, 只能使用r
+# https://www.cnblogs.com/dkblog/archive/2011/02/24/1980651.html
+# 文件路径前加r是表示字符串中的字符不进行转义, 如果不带r, 路径中如果有\t, 就会转义为制表符
+# https://www.cnblogs.com/cyiner/archive/2011/09/18/2180729.html
 allData = open(r"F:\PyWorkspace\pubdata\AllElectronics.csv", "r")
 
 reader = csv.reader(allData)
 
+# headers = reader.next()
+# Python2 才有此方法, Python3使用如下方法
+# headers就是csv文件的标题行
+# 请注意: next方法在取出第一行数据的同时, 已经将指针指向第二行了
 headers = next(reader)
 
 # print(headers)
 
+
+# scikit learn要求所有属性和label的值都必须是数值型, 而不是能是字符, 所以使用决策树之前要做数据转换
 featureList = []
 labelList = []
 
+# 如何处理数据???
+# 将每一个属性的所有取值变成一个向量, 那么对于单一属性值, 就可以转换成行向量
+# 例如 对于age来说, 它的取值范围是青年 中年 老, 那么对于第一行的数据youth就转换成1  0  0
+# 同理将收入high也转换成 1  0  0
+# 最终['1', 'youth',   'high',  'no',  'fair', 'no']转化成一个向量x
+#           (1, 0, 0,  1, 0, 0, 0, 1,  1, 0,   0)
+# skt里边带有一个包, 帮助我们转化数据
 for row in reader:
+    # 将最后的一列, 放入Label列表中
     labelList.append(row[len(row) - 1])
     rowDic = {}
     for i in range(1, len(row) - 1):
+        # 将属性名称和对应的值放入字典
+        # age = youth, income = high
         rowDic[headers[i]] = row[i]
 
     featureList.append(rowDic)
