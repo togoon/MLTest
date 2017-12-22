@@ -35,4 +35,5 @@ x_t = 6
 
 y_t = predict(x_t, b0, b1)
 
-print(y_t)
+# 又学到一种打印的技巧
+print("Y_Test:", y_t)
