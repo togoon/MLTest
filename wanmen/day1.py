@@ -47,8 +47,17 @@ num *= 10
 print(math.pow(10, 3))
 
 ## 最大/小值
-print(min(1,2,3))
-print(max(1,2,3))
+print(min(1, 2, 3))
+print(max(1, 2, 3))
 
 ## sum
-print(sum([1,2,3]))
+print(sum([1, 2, 3]))
+
+## List Dict Tuple
+ll = list[1, 2, 3]
+dd = {
+    "zhang": 10,
+    "zhao": 10
+}
+
+tt = (a, 1, 100, "str11")
