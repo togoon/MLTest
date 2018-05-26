@@ -11,7 +11,7 @@ import math
 print(math.pi)
 print(math.sin(math.pi / 2))
 
-print(100/3, round(100/3), round(100/3, 3))
+print(100 / 3, round(100 / 3), round(100 / 3, 3))
 
 apple_price = 5
 apple_weight = 2
@@ -35,3 +35,20 @@ print("a is {}, b is {}".format(a, b))
 ## Python 是大小写敏感的
 n = 10
 N = 20
+
+##数值类型
+num = 10
+num = num + 10
+num += 10
+num -= 10
+num *= 10
+
+## 乘方
+print(math.pow(10, 3))
+
+## 最大/小值
+print(min(1,2,3))
+print(max(1,2,3))
+
+## sum
+print(sum([1,2,3]))
