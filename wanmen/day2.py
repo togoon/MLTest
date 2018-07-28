@@ -79,8 +79,8 @@ for n in nums:
     if n % 2 == 0:
         print(n, " is 偶数")
     else:
-        print(n, " is 奇数")
         break
+        print(n, " is 奇数")
 else:
     print("就是要打印")
 # 在for 循环中，如果没有从任何一个break中退出，则会执行和for对应的else, 只要从break中退出了，则else部分不执行
@@ -100,3 +100,8 @@ print(new_nums)
 # 字典推导式---生成一个字典
 new_dicts = {n: "A" for n in nums}
 print(new_dicts)
+
+# 元组推导式---生成一个字典
+new_tuples = (n * 5 for n in nums)  # 这其实是一个生成器 <generator object <genexpr> at 0x000001B7715FADB0>
+print(new_tuples)
+print(tuple(new_tuples))
