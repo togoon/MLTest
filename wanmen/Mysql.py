@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Created By zl
 
-# Python 操作mysql
+# 3.1 Python 操作mysql
 ## 推荐Python数据结构可视化工具: http://www.pythontutor.com/live.html#mode=edit
 
 # json
